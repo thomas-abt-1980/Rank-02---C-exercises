@@ -6,12 +6,11 @@
 /*   By: tabt <thomas.abt@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 07:33:16 by tabt              #+#    #+#             */
-/*   Updated: 2026/11/24 08:59:15 by tabt             ###   ########.fr       */
+/*   Updated: 2026/11/24 09:13:07 by tabt             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
