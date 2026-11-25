@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tabt <thomas.abt@learner.42.tech>          +#+  +:+       +#+        */
+/*   By: tabt <tabt@learner.42.tech>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 13:30:02 by tabt              #+#    #+#             */
-/*   Updated: 2026/11/25 15:05:22 by tabt             ###   ########.fr       */
+/*   Updated: 2026/11/25 16:04:31 by tabt             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 char	**ft_split(char const *s, char c)
 {
@@ -37,7 +38,7 @@ char	**ft_split(char const *s, char c)
 	array = malloc((words +1) * sizeof(char *));
 		if (array == NULL)
 			return (NULL);
-		array[i] = NULL;
+		array[words] = NULL;
 		
 	i = 0;
 
@@ -67,6 +68,7 @@ char	**ft_split(char const *s, char c)
 			j++;
 		}
 		str[j] = '\0';
+		j = 0;
 		array[k] = str;
 		k++;
 	}
@@ -91,14 +93,14 @@ int main(int argc, char **argv)
 
     while (result[i] != NULL)
     {
-        printf("%s\n", result[i]);
+        printf("string [%ld]: %s\n",i, result[i]);
         i++;
     }
 	while( i > 0)
 	{
 		i--;
 		free(result[i]);
-		free(result);
 	}
+	free(result);
     return (0);
 }
